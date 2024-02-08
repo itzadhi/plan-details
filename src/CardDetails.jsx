@@ -2,22 +2,27 @@ import { CheckIcon, XIcon } from '@primer/octicons-react';
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
+//Each feature availablility in each plan details
 function FeatureDetails({ info, customStyle = 'text-dark' }) {
   return (
     <div className='d-flex align-items-center p-2'>
       {customStyle === 'text-dark' ? (
         <CheckIcon size={16} />
       ) : (
-        <XIcon fill='rgb(235, 235, 228)' size={16} />
+        <XIcon fill='rgb(150, 150, 141)' size={16} />
       )}
 
-      <span className={customStyle}>{info}</span>
+      <span className={customStyle} style={{ color: 'rgb(150, 150, 141)' }}>
+        {info}
+      </span>
     </div>
   );
 }
 
-function CardDetails({ name, price, disable, details }) {
-  const disableTracker = details.length - disable;
+function CardDetails({ name, price, featureAvailable, features }) {
+  //How many features are available on each plan
+  const featureAvailableTracker = features.length - featureAvailable;
+
   return (
     <Card style={{ width: '18rem' }} className='m-3 rounded'>
       <Card.Body>
@@ -28,12 +33,12 @@ function CardDetails({ name, price, disable, details }) {
           {price}
         </Card.Title>
 
-        {details.slice(0, disable).map((info, index) => {
+        {features.slice(0, featureAvailable).map((info, index) => {
           return <FeatureDetails key={index} info={info} />;
         })}
 
-        {disableTracker !== details.length &&
-          details.slice(disable).map((info, index) => {
+        {featureAvailableTracker !== features.length &&
+          features.slice(featureAvailable).map((info, index) => {
             return (
               <FeatureDetails
                 key={index}

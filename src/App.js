@@ -3,9 +3,10 @@ import CardDetails from './CardDetails';
 import './App.css';
 
 function App() {
+  //Plan details
   const data = [
     {
-      details: [
+      features: [
         'Single User',
         '50GB Storage',
         'Unlimited Public Projects',
@@ -17,10 +18,10 @@ function App() {
       ],
       price: '$0/month',
       name: 'Free',
-      disable: -4,
+      featureAvailable: -4,
     },
     {
-      details: [
+      features: [
         '5 Users',
         '50GB Storage',
         'Unlimited Public Projects',
@@ -32,10 +33,10 @@ function App() {
       ],
       price: '$9/month',
       name: 'Plus',
-      disable: -1,
+      featureAvailable: -1,
     },
     {
-      details: [
+      features: [
         'Unlimited Users',
         '50GB Storage',
         'Unlimited Public Projects',
@@ -47,7 +48,7 @@ function App() {
       ],
       price: '$49/month',
       name: 'Pro',
-      disable: 8,
+      featureAvailable: 8,
     },
   ];
 
@@ -56,11 +57,11 @@ function App() {
       <div className='d-flex justify-content-between container-style'>
         {data.map((detail) => (
           <CardDetails
-            key={detail.disable}
+            key={detail.featureAvailable}
             name={detail.name}
             price={detail.price}
-            disable={detail.disable}
-            details={detail.details}
+            featureAvailable={detail.featureAvailable}
+            features={detail.features}
           />
         ))}
       </div>
