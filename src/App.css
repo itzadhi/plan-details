@@ -1,19 +1,10 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-.main-container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .container-style {
-  width: 70%;
-  padding: 3rem;
   background-color: rgb(0, 140, 255);
   border-radius: 1.5rem;
 }
@@ -23,7 +14,7 @@
 }
 
 .custom-text {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .custom-color {

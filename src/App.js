@@ -53,8 +53,8 @@ function App() {
   ];
 
   return (
-    <div className='main-container'>
-      <div className='d-flex justify-content-between container-style'>
+    <div className='container-fluid d-flex justify-content-center'>
+      <div className='d-flex justify-content-center flex-wrap align-content-center p-3 container-style'>
         {data.map((detail) => (
           <CardDetails
             key={detail.featureAvailable}
