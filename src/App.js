@@ -53,7 +53,7 @@ function App() {
   ];
 
   return (
-    <div className='container-fluid d-flex justify-content-center'>
+    <div className='container-md d-flex justify-content-center mt-5'>
       <div className='d-flex justify-content-center flex-wrap align-content-center p-3 container-style'>
         {data.map((detail) => (
           <CardDetails
